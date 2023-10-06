@@ -5,14 +5,10 @@
  */
 int main(void)
 {
-	char j;
+	int j;
 
-	for (j = 'a'; j <= 'z'; j++)
-	{
-	if (j != 'e' && j != 'q')
-	putchar(j);
-	}
-
-	putchar('\n');
+	for (j = 0; j <= 9; j++)
+		printf("%d", j);
+	printf("\n");
 	return (0);
 }
