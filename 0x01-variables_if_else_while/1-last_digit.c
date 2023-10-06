@@ -3,7 +3,7 @@
 #include <stdio.h>
 /**
 * main - assigning a random number
-* Return: always 0 when successful
+* Return: generated number
 */
 /* more headers goes there */
 
