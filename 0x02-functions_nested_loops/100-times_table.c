@@ -5,16 +5,16 @@
  */
 void print_times_table(int n)
 {
-	int i, j, k;
+	int h, i, k;
 
 	if (n >= 0 && n <= 15)
 	{
-		for (i = 0; i <= n; i++)
+		for (h = 0; h <= n; i++)
 		{
-			for (j = 0; j <= n; j++)
+			for (i = 0; i <= n; i++)
 			{
-				k = j * i;
-				if (j == 0)
+				k = i * h;
+				if (i == 0)
 				{
 					_putchar(k + '0');
 				} else if (k < 10 && j != 0)
