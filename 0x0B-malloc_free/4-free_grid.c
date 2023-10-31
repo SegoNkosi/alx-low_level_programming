@@ -2,38 +2,18 @@
 #include <stdlib.h>
 
 /**
- * _realloc - this reallocates memory
- * @str: pointer to old memory
- * @old_size: old size allocated
- * @new_size: new size allocated
- * Return: newly allocated memory pointer
+ * free_grid - function that frees a 2 dimensional grid
+ * @grid: array of integers
+ * @height: height of grid
+ *
+ * Retiurn: no return
  */
-void *_realloc(void *str, unsigned int old_size, unsigned int new_size)
+void free_grid(int **grid, int height)
 {
-	char *p;
-	size_t j, max = new_size;
-	char *oldp = str;
-
-	if (str == NULL)
+	if (grid != NULL && height != 0)
 	{
-		p = malloc(new_size);
-			return (p);
+		for (; height >= 0; height--)
+				free(grid[height]);
+			free(grid);
 	}
-	else if (new_size == old_size)
-	{
-		free(str);
-		return (NULL);
-	}
-	else if (new_size == old_size)
-		return (str);
-
-	p = malloc(new_size)
-		if (p == NULL)
-			return (NULL);
-	if (new_size > old_size)
-		max = old_size;
-	for (j = 0; j < max; j++)
-		p[j] = oldp[j];
-	free(str);
-	return (p);
 }
