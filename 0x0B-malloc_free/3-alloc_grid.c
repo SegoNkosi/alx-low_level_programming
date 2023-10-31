@@ -2,26 +2,43 @@
 #include <stdlib.h>
 
 /**
- * array_range - this creates an array of integers
- * @min: value, min
- * @max: value, max
- * Return: pointer for int, to allocated memory
+ * alloc_grid - function that returns a pointer to
+ * a 2 dimensional array of integers
+ * @width: array width
+ * @height: array height
+ * Return: pointer to an array of int
  */
-int *array_range(int min, int max)
+int **alloc_grid(int width, int height)
 {
-	int l, r;
-	int *b;
+	int k, l;
+	int **gridout;
 
-	if (min > max)
-		return (NULL);
-	r = max - min + 1;
-	b = malloc(sizeof(int) * r);
-	if (b == NULL)
-		return (NULL);
-	for (l = 0; l < 1; l++)
+	if (width <= 0 || height <= 0)
 	{
-		b[l] = min;
-		min++;
+		return (NULL);
 	}
-	return (b);
+	gridout = malloc(height * sizeof(int *));
+	if (gridout == NULL)
+	{
+		free(gridout);
+		return (NULL);
+
+	}
+	for (k = 0; k < height; k++)
+	{
+		gridout[k] = malloc(width * sizeof(int));
+		if (gridout[k] == NULL)
+		{
+			for (k--; k >= 0; k--)
+			free(gridout[k]);
+			free(gridout[k]);
+			return (NULL);
+		}
+	}
+	for (k = 0; k < height; k++)
+		for (l = 0; l < width; l++)
+			gridout[k][l] = 0;
+
+	return (gridout);
+
 }
