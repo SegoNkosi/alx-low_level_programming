@@ -21,6 +21,7 @@ void print_elem(int elem)
 void print_elem_hex(int elem)
 {
     printf("0x%x\n", elem);
+}
 /**
  * main - check the code
  *
@@ -33,4 +34,4 @@ int main(void)
     array_iterator(array, 5, &print_elem);
     array_iterator(array, 5, &print_elem_hex);
     return (0);
-}}
+}
