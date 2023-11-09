@@ -21,7 +21,7 @@ int is_98(int elem)
 int is_strictly_positive(int elem)
 {
     return (elem > 0);
-
+}
 
 /**
  * abs_is_98 - check if the absolute value of a number is 98
@@ -51,4 +51,4 @@ int main(void)
     index = int_index(array, 20, is_strictly_positive);
     printf("%d\n", index);
     return (0);
-}}
+}
