@@ -1,24 +1,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "list.h"
+#include "lists.h"
 
-/**
- * _strlen - this function will return the
- * length of a string
- * @s: this is the character
- * Return: value is k
- */
-int_strlen(const char *s)
-{
-	int k = 0;
-
-	while (s[k] != '\0')
-	{
-		k++;
-	}
-	return (k);
-}
 
 /**
  * add_node - this function adds a new node at the beginning of a list
@@ -29,16 +13,20 @@ int_strlen(const char *s)
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *add;
+	unsigned int k, count = 0;
 
 
 	add = malloc(sizeof(list_t));
 	if (add == NULL)
-
 		return (NULL);
 
-	add->len = _strlen(str);
+	add->str = strdup(str);
+	for (k = 0; str[k] != '\0'; k++)
+		count++;
+	add->len = count;
 	add->next = *head;
 	*head = add;
 
-	return (add);
+	return (*head);
 }
+
