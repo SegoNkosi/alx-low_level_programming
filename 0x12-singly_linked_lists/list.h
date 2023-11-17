@@ -8,6 +8,7 @@
  * @str: the malloced string
  * @len: the string's length
  * @next: next node pointer
+ * Description: singly linked list node structure
  */
 
 typedef struct list_s
